@@ -18,7 +18,7 @@ const resultadoCalculo = 5 + 3 * 2;
 
 let primerNombre = "Alejandro";
 let segundoNombre = "Avila";
-let nombreCompleto = primerNombre + " " +segundoNombre;
+let nombreApellido = primerNombre + " " +segundoNombre;
 
 /*ejemplo Variables*/
 function ejemploVar() {
@@ -94,12 +94,21 @@ if (true) {
 }
 console.log(x); // Error: x is not defined
 
-/** A diferencia de var y let, una variable declarada con const debe ser inicializada en el momento de su declaración. No puedes declarar una constante sin asignarle un valor.*/
+// No se puede reasignar valores
+const y = 5; 
+y = 7; // error: asignacion a variable constante
+
+/** A diferencia de var y let, una variable declarada con "const" debe ser inicializada en el momento de su declaración. No puedes declarar una constante sin asignarle un valor.*/
 
 const y; // Error: Missing initializer in const declaration
 const z = 10; // Correcto
 
 /**Una vez que una constante ha sido asignada, no puedes reasignarla a otro valor. Sin embargo, esto no significa que el valor en sí sea inmutable. Si la constante es un objeto o un array, sus propiedades o elementos pueden ser modificados.*/
+
+const z = 2;
+const z = 4; //Error: asigancion a variable constante
+
+//-------------------
 
 const a = 10;
 a = 20; // Error: Assignment to constant variable
@@ -115,12 +124,30 @@ const b = 5;
 
 /**En resumen, const es útil para declarar variables que no deben cambiar su valor a lo largo del tiempo, proporcionando un código más seguro y predecible */
 
-// No se puede reasignar valores
-const y = 5; 
-y = 7; // error: asignacion a variable constante
+//-------------------------------------------------------------------------------------------------------
 
+// JavaScript es un lenguaje dinamico, osea que una variable asiganda puede ser reasignada con otro valor de diferente tipo
 
+let miVariable = 10;
+console.log(typeof miVariable); // Salida: number
 
+miVariable = 'hola';
+console.log(typeof miVariable); // salida; string
+
+// Para que esta funcion se ejecute de manera correcta se tiene que hacer una formula matematica, haciendo que las variables en vez de usar numeros, sea de tipo string (osea, usando texto), lo que se le llamaria una concatenacion.
+
+let nombre = 'Alejandro';
+let apellido = 'Avila';
+let nombreCompleto = nombre + ' ' + apellido;
+console.log(nombreCompleto); //Salida; Alejandro Avila
+
+// En este caso se usa la variable "numeroString" como si fuera un texto, aunque el contenido es un numero.
+// Haciendo esto el resultado sea 510, para que haya un espacio entre el 5 y el 10 se debe de usar las comillas simples '' en medio de la suma, de esta forma: let resultado = numero +' ' + numeroString;
+
+let numero = 5;
+let numeroString = '10'; //forma de cadena de caracterex, osea que no es un numero.
+let resultado = numero + numeroString;
+console.log(resultado); // Salida: 510
 
 
 
