@@ -84,6 +84,37 @@ function ejemploConst(){
 
 ejemploConst();
 
+/** la palabra clave const se utiliza para declarar constantes, es decir, variables cuyo valor no puede cambiar una vez que han sido inicializadas. */
+
+/** Al igual que let, las variables declaradas con const tienen un ámbito de bloque. Esto significa que solo están disponibles dentro del bloque en el que se declaran (por ejemplo, dentro de un if, for, etc.). */
+
+if (true) {
+    const x = 5;
+    console.log(x); // 5
+}
+console.log(x); // Error: x is not defined
+
+/** A diferencia de var y let, una variable declarada con const debe ser inicializada en el momento de su declaración. No puedes declarar una constante sin asignarle un valor.*/
+
+const y; // Error: Missing initializer in const declaration
+const z = 10; // Correcto
+
+/**Una vez que una constante ha sido asignada, no puedes reasignarla a otro valor. Sin embargo, esto no significa que el valor en sí sea inmutable. Si la constante es un objeto o un array, sus propiedades o elementos pueden ser modificados.*/
+
+const a = 10;
+a = 20; // Error: Assignment to constant variable
+
+const obj = { name: "Alice" };
+obj.name = "Bob"; // Esto es permitido
+console.log(obj.name); // "Bob"
+
+/**Al igual que let, las constantes declaradas con const son elevadas (hoisted) al inicio de su bloque, pero no pueden ser utilizadas antes de su declaración debido a la “zona muerta temporal” (temporal dead zone).*/
+
+console.log(b); // Error: Cannot access 'b' before initialization
+const b = 5;
+
+/**En resumen, const es útil para declarar variables que no deben cambiar su valor a lo largo del tiempo, proporcionando un código más seguro y predecible */
+
 // No se puede reasignar valores
 const y = 5; 
 y = 7; // error: asignacion a variable constante
