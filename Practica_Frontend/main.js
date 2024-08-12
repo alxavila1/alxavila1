@@ -131,7 +131,7 @@ const b = 5;
 let miVariable = 10;
 console.log(typeof miVariable); // Salida: number
 
-miVariable = 'hola';
+miVariable = 'Hola';
 console.log(typeof miVariable); // salida; string
 
 // Para que esta funcion se ejecute de manera correcta se tiene que hacer una formula matematica, haciendo que las variables en vez de usar numeros, sea de tipo string (osea, usando texto), lo que se le llamaria una concatenacion.
@@ -139,19 +139,84 @@ console.log(typeof miVariable); // salida; string
 let nombre = 'Alejandro';
 let apellido = 'Avila';
 let nombreCompleto = nombre + ' ' + apellido;
-console.log(nombreCompleto); //Salida; Alejandro Avila
+console.log(nombreCompleto); //Salida: Alejandro Avila
 
 // En este caso se usa la variable "numeroString" como si fuera un texto, aunque el contenido es un numero.
 // Haciendo esto el resultado sea 510, para que haya un espacio entre el 5 y el 10 se debe de usar las comillas simples '' en medio de la suma, de esta forma: let resultado = numero +' ' + numeroString;
 
 let numero = 5;
-let numeroString = '10'; //forma de cadena de caracterex, osea que no es un numero.
+let numeroString = '10'; //forma de cadena de caracteres, osea que no es un numero.
 let resultado = numero + numeroString;
 console.log(resultado); // Salida: 510
 
 
+//Modo estricto
 
+/**
+ * El modo estrico de javascript es una forma de habilitar un conjunto de mas estricto de reglas para escribir codigo JavaScript.
+ * Ayuda a detectar errores comunes y prevenirlos.
+ */
 
+'use strict';
 
+// Previene asignar valores a variables no declaradas anteriormente.
 
+variableSinDeclaracion = 17;
 
+//Previene la reasignacion de valores globales.
+
+NaN = 10;
+
+//previene parametros duplicados en funciones.
+
+function suma(x, x){
+    return x + x;
+}
+
+//No permite eliminar variables, funciones o argumentos de funciones
+var x = 10;
+delete x;
+
+/**Datos Primitivos */
+
+// se les conocen como primitivos por que no pueden ser modificados
+
+   
+// Numeros
+let valorNumeral = 1000;
+valorNumeral = 1001;
+
+// Strings
+const valorString = 'Hola JavaScript';
+
+//Booleanos
+const valorBooleano = true;
+
+//Symbol
+
+const valorSymbol = Symbol();
+
+// Indefinidos
+
+const valorIndefinido = undefined;
+
+//Nulos
+
+const valorNulo = null;
+
+// Tipos no primitivos:
+
+//objetos: son contenedores que pueden tener varios valores almacenados dentro de la misma variable, o constante
+
+const objeto ={ nombre: 'Natalia', apellido: Correa};
+
+// Arreglos: son objetos pero diferentes naturaleza, con ellos se pueden crear listas de valores con tipos tanto primitivos como no primitivos.
+
+const arr = [1, 2, 3, 4, 5];
+
+/* Tipo Numbre Bigint.js */
+
+// Valor numeral int:
+
+const numeroInt = 42; // este es un valor numeral regular
+console.log(numeroInt); // Salida: 42
