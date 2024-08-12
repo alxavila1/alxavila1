@@ -157,6 +157,9 @@ console.log(resultado); // Salida: 510
  * Ayuda a detectar errores comunes y prevenirlos.
  */
 
+"use strict";
+var mensaje = "¡Hola! Estoy en modo estricto.";
+
 'use strict';
 
 // Previene asignar valores a variables no declaradas anteriormente.
@@ -218,5 +221,20 @@ const arr = [1, 2, 3, 4, 5];
 
 // Valor numeral int:
 
-const numeroInt = 42; // este es un valor numeral regular
+const numeroInt = 42.6; // este es un valor numeral regular
 console.log(numeroInt); // Salida: 42
+
+//valor numeral bigInt:
+
+/*BigInt es un tipo de dato numérico introducido en JavaScript para representar números enteros más grandes que el valor máximo que puede manejar el tipo Number (que es 2^53 – 1). En otras palabras, BigInt permite trabajar con números enteros arbitrariamente grandes de forma precisa*/
+
+// Generalmente se utiliza cuando se necesita hacer una operacion matematica dentro del codigo de manera mas precisa 
+
+let numeroBigInt = 1234567890n;
+// Salida: 1234567890123456789012345678901234567890n
+console.log(numeroBigInt);
+
+/**Tpo String o cadena de caracteres */
+//se utiliza para representar textos en javascript
+
+const stringEjemplo1 = 'Hola mundo!';
