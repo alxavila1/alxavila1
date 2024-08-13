@@ -292,3 +292,28 @@ let estaLogueado = false;
 
 let tieneAcceso = tienePermiso && estaLogueado;
 console.log(tieneAcceso); // Salida: false
+
+/**Symbols */
+
+/** Los Symbols en JavaScript son un tipo de dato primitivo introducido en ECMAScript 6 (ES6). Son únicos y se utilizan principalmente para crear identificadores únicos para propiedades de objetos. En resumen, los Symbols son útiles para crear identificadores únicos y propiedades “ocultas” en objetos, lo que ayuda a evitar conflictos de nombres y a encapsular datos de manera segura 
+ 
+
+ * Puedes crear un Symbol utilizando la función Symbol(). Cada Symbol es único, incluso si tienen la misma descripción.
+*/
+
+const miSimbolo = Symbol();
+console.log(typeof miSimbolo); // Salida; symbol
+
+// Con descripcion
+const miSimboloConDescripcion = Symbol('algun nombre o descripción.');
+console.log(miSimboloConDescripcion.toString());
+// Salida: Symbol(algun nombre o descripción)
+
+//Uso como llave unica:
+const llaveUnica = symbol('llave unica');
+
+const unObjeto = {
+[llaveUnica]: 'Valor asociado a la llave unica'
+};
+
+console.log(unObjeto[llaveUnica]); //Salida: valor asociado a la llave unica.
