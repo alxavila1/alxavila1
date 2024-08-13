@@ -238,3 +238,57 @@ console.log(numeroBigInt);
 //se utiliza para representar textos en javascript
 
 const stringEjemplo1 = 'Hola mundo!';
+console.log(stringEjemplo1); // Salida: Hello world!
+
+const stringEjemplo2 = "Este es un valor string.";
+console.log (stringEjemplo2); // Salida: Este es un valor string.
+
+let stringConComillasSimples = 'El dijo, "Buenos dias!"';
+console.log(stringConComillasSimples); // Salida: El dijo, "Buenos dias!"
+
+
+let stringConComillasDobles = "El dijo, 'Buenos dias!'";
+console.log(stringConComillasDobles); // Salida: El dijo, 'Buenos dias!'
+
+//Estas son formas de usar las comillas, tanto las simples como las dobles, todo dependera de la necesidad de la tarea, en caso de que necesitemos usar las comillas simples como parte del texto entonces las que conformaran el string seran las comillas dobles.
+
+/** Templates strings */
+
+let nombre = 'Mario';
+let edad = 30;
+
+// para definir un string se utilizan las comillas invertidas ``
+
+let saludo = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
+console.log (saludo);
+// Salida: Hola, mi nombre es Mario y tengo 30.
+
+// Multi linea
+
+let mensaje = `
+Los template strings
+con varios cambios de linea.
+Esto nos facilita darle formato
+a un texto.`;
+console.log(mensaje);
+/**
+ Salida:Los template strings
+con varios cambios de linea.
+Esto nos facilita darle formato
+a un texto.
+ */
+
+// Expresiones dentro de un template string:
+const a = 10;
+const b = 20;
+
+let suma = `La suma de ${a} y ${b} es ${a + b}.`;
+// Salida: La suma de 10 y 20 es 30.
+
+/** Booleans */
+
+let tienePermiso = true;
+let estaLogueado = false;
+
+let tieneAcceso = tienePermiso && estaLogueado;
+console.log(tieneAcceso); // Salida: false
