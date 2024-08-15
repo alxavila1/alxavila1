@@ -304,7 +304,7 @@ console.log(tieneAcceso); // Salida: false
 const miSimbolo = Symbol();
 console.log(typeof miSimbolo); // Salida; symbol
 
-// Con descripcion
+// Con descripcion, Los Symbols se pueden usar como claves de propiedades en objetos. Esto es útil para evitar conflictos de nombres, ya que cada Symbol es único.
 const miSimboloConDescripcion = Symbol('algun nombre o descripción.');
 console.log(miSimboloConDescripcion.toString());
 // Salida: Symbol(algun nombre o descripción)
@@ -317,3 +317,103 @@ const unObjeto = {
 };
 
 console.log(unObjeto[llaveUnica]); //Salida: valor asociado a la llave unica.
+
+// Tipos Null o Undefined
+
+/**
+ Null: Representa la ausencia intencional de valor. Es decir, cuando deseas expresamente indicar que una variable no tiene un valor válido o que un objeto no existe.
+
+ Cuando inicializas una variable que aún no tiene un valor válido
+
+ let resultado = null; // Indica que aún no hay un resultado válido
+ 
+ undefined: Indica que una variable no ha sido inicializada o que no tiene un valor asignado.
+
+ let nombre; // 'nombre' está indefinido
+
+ null se usa para indicar intencionalmente la falta de valor, mientras que undefined se refiere a la falta de asignación o inicialización. Ambos son importantes en diferentes contextos y deben usarse con precisión.
+ */
+
+// Asignacion explicita de null a una variable
+let miVariable = null;
+console.log(miVariable); // Salida: null
+
+function retornoNull(){
+    return null;
+}
+
+let resultado = retornoNull();
+console.log(resultado); // Salida: null
+
+// variables sin un valor asignado:
+
+let miVariable2;
+console.log(miVariable2); // Salida: Undefined
+
+function muestraEnConsola(parametro){
+    console.log(parametro);
+}
+
+muestraEnConsola(); // Salida: Undefined
+
+// Objetos
+
+/*  Los objetos en JavaScript son fundamentales y te permiten representar y organizar datos de manera estructurada.
+
+
+-Un objeto es una entidad independiente que puede contener propiedades y métodos.
+-Las propiedades son pares clave-valor que definen las características del objeto.
+-Los métodos son funciones asociadas al objeto.
+*/
+
+const persona = {
+    nombre: "Carlos",
+    apellido: "Monge",
+    edad: 30,
+    esAutorizado: true
+};
+
+console.log(persona.nombre); // Salida: Carlos
+
+console.log = persona.nombre + ' ' + persona.apellido;
+persona.edad = 40;
+
+// Objetos anidados: son un grupo de objetos que puedes separarlos por niveles 
+
+const persona2 = {
+    nombre: "Carlos",
+    apellido: "Monge",
+    edad: 30, 
+    esAutorizado: true,
+    direccion: { 
+        calle: 14,
+        avenida: 6,
+        codigoPostal: 'D05TX45'
+    }
+};
+ // Preferiblemente no anidar muchos datos por que harian el codigo muy complejo
+
+ console.log(persona2.direccion.calle); // Salida:14 - para crear la "ruta" la informacion que queiro sacar se tiene que usar puntos.
+
+//  Arreglos/ Arrays
+
+/**  Los arrays en JavaScript son estructuras de datos que nos permiten almacenar y organizar múltiples valores en una sola variable. También se les conoce como listas o vectores.
+     Los arrays son fundamentales en la programación y se utilizan ampliamente para agrupar elementos relacionados.
+
+     Cada elemento en un array tiene una posición numérica llamada índice.
+
+     Los índices comienzan desde 0 (el primer elemento) y aumentan en orden.
+ */
+
+const miArray = [elemento1, elemento2, elemento3];
+
+const numeros = [1, 2, 3, 4, 5];
+console.log(numeros [0]); //Salida: 1
+console.log(numeros [5]); //Salida: undefined
+
+const frutas = ["manzana", "banano", "piña", "naranja"];
+console.log(frutas[3]); // Salida: naranja
+frutas[2] = 'pera'
+console.log (frutas[2]); //Salida: pera
+
+let arregloMixto = [1, "manzana", true, null, { nombre: "Sara"}];
