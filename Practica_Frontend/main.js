@@ -417,3 +417,292 @@ frutas[2] = 'pera'
 console.log (frutas[2]); //Salida: pera
 
 let arregloMixto = [1, "manzana", true, null, { nombre: "Sara"}];
+
+/** Destructuracion de arreglos: */
+
+const numeros = [1, 2, 3, 4, 5];
+
+const [primero, segundo, , cuarto] = numeros;
+
+console.log(primero); //Salida: 1
+console.log(segundo); //Salida: 2
+console.log(cuarto); //Salida: 4
+
+//destructuracion de objetos:
+
+const usuario = { nombre: "Andres", edad: 30, esAdmin: true};
+
+const { nombre, edad, esAdmin} = usuario;
+
+console.log(nombre); //Salida: Andres
+console.log(edad); //Salida: 30
+console.log(esAdmin); //Salida: true
+
+// Clase Math
+
+let numero = 16;
+let raizCuadrada = Math.sqrt(numero);
+console.log(raizCuadrada); // Salida: 4
+
+//generar numeros aleatorios:
+//Math.random numero aleatorio entre 0 y 1
+let numeroAleatorio = Math.random();
+console.log(numeroAleatorio);
+
+// redondear numeros:
+let numeroDecimal = 3.7
+let numeroRedondeado = Math.round(numeroDecimal);
+console.log(numeroRedondeado); //Salida 4
+
+//utilidades de objetos
+
+const persona = {
+    nombre: "Juan",
+    edad: 30,
+    ciudad: "Heredia"
+}
+
+
+//object.keys(): solo retorna las keys de los objetos 
+
+let llaves = Object.keys(persona);
+console.log(llaves); // Salida ['nombre', 'edad', 'ciudad']
+
+// Object.values(): solo retorna el valor de las keys
+const valores = Object.values(persona);
+console.log(valores); // Salida: [ 'Juan', 30, 'Heredia' ]
+
+// Object.entries(): retorna tanto las keys como los valores
+const entradas = Object.entries(persona);
+console.log(entradas);
+// Salida: [ [ 'nombre', 'Juan' ], [ 'edad', 30 ], [ 'ciudad', 'Heredia' ] ]
+
+// Object.assign(): se usa para fusionar objetos
+const destino = { a: 1, b: 2 };
+const origen = { b: 3, c: 4 };
+
+const objetoFusionado = Object.assign({}, destino, origen);
+
+console.log(objetoFusionado); // Salida: { a: 1, b: 3, c: 4 }
+
+// objetos tipo date
+
+// Obtener la fecha y hora actual:
+const fechaHoraActual = new Date();
+console.log(fechaHoraActual);
+
+// Objener información sobre la fecha:
+const ahora = new Date();
+const anno = ahora.getFullYear();
+const mes = ahora.getMonth();
+const dia = ahora.getDate();
+const horas = ahora.getHours();
+const minutos = ahora.getMinutes();
+const segundos = ahora.getSeconds();
+
+console.log(`Hoy es ${anno}-${mes + 1}-${dia} ${horas}:${minutos}:${segundos}`);
+
+// Como crear un objeto con una fecha y hora específica:
+// Año, mes, día, horas, minutos, segundos
+const fechaEspecifica = new Date(2023, 8, 30, 12, 30, 0);
+console.log(fechaEspecifica);
+
+// Opeadores de asignación
+
+let x = 5; // Asigna el valor de 5 a la variable x
+
+// asignación de suma
+let y = 10;
+y += 3; // Equivalente a: y = y + 3; 
+console.log(y); // y ahora es 13
+
+// asignación de resta
+let z = 15;
+z -= 7; // Equivalente a: z = z - 7;
+console.log(z); // z ahora es 8
+
+// asignación de multiplicación
+let w = 20;
+w *= 2; // Equivalente a: w = w * 2;
+console.log(w); // w ahora es 40
+
+// asignación de división
+let a = 50;
+a /= 5; // Equivalente a: a = a / 5;
+console.log(a); // a ahora es 10
+
+// asignación de módulo
+let b = 17;
+b %= 5; // Equivalente a: b = b % 5;
+console.log(b); // b ahora es 2
+
+// asignación de exponencial
+let c = 2;
+c **= 3; // Equivalente a: c = c ** 3;
+console.log(c); // c ahora es 8
+
+// Operadores aritméticos:
+
+// Suma:
+let suma = 5 + 3; // suma ahora es 8
+
+// Resta:
+let diferencia = 10 - 4; // diferencia ahora es 6
+
+// Multiplicación:
+let producto = 7 * 2; // producto ahora es 14
+
+// División:
+let cociente = 20 / 4; // cociente ahora es 5
+
+// Módulo:
+let residuo = 17 % 5; // residuo es 2
+
+// Exponencial:
+let potencia = 2 ** 3; // potencia ahora es 8
+
+// Incremento:
+let x = 5;
+x++; // x ahora es 6
+
+// Decremento:
+let y = 8;
+y--; // y ahora es 7
+
+// Operadores de comparación:
+
+let x = 5;
+let y = '5';
+
+// Operador de igualdad:
+console.log(x == y); // Salida: true (después de la coerción de tipos)
+
+// Operador de igualdad estricta:
+console.log(x === y); // Salida: false
+
+// Operador de no igualdad:
+console.log(x != y); // Salida: false (después de la coerción de tipos)
+
+// Operador de no igualdad estricta:
+console.log(x !== y); // Salida: true
+
+let a = 10;
+let b = 5;
+let c = 5;
+
+// Operador "menor que":
+console.log(a < b); // Salida: false
+
+// Operador "menor o igual que":
+console.log(c <= b); // Salida: true
+
+// Operador "mayor que":
+console.log(a > b); // Salida: true
+
+// Operador "mayor o igual que":
+console.log(a >= b); // Salida: true
+
+// Operadores que se pueden usar con strings:
+
+// concatenación:
+let nombre = "Maria";
+let apellido = "Martinez";
+let nombreCompleto = nombre + " " + apellido;
+console.log(fullName); // Salida: "Maria Martinez"
+
+// concatenación y asignación:
+let saludo = "Hola, ";
+let usuario = "Alice";
+saludo += usuario;
+console.log(saludo); // Salida: "Hola, Alice"
+
+// Operadores lógicos:
+
+const x = true;
+const y = false;
+
+// Expresiones lógicas:
+// AND: doble ampersand
+let resultado = x && y && true; // resultado es false
+
+// OR: doble barra vertical
+let resultado2 = x || y || false; // resultado2 es true
+
+// NOT: signo de exclamación
+let resultado3 = !x; // resultado3 es false
+let resultado4 = !y; // resultado3 es true
+
+// Podemos componer expresiones más largas y complejas:
+
+const a = 5;
+const b = 6;
+const c = 7;
+
+const resultadoExp1 = (a > c) && (b < c);
+console.log(resultadoExp1);
+// (a > c): false
+// (b < c): true
+// resultadoExp1 = false
+
+const resultadoExp2 = (a > c) || (b < c);
+console.log(resultadoExp2);
+// (a > c): false
+// (b < c): true
+// resultadoExp2 = true
+
+const resultadoExp3 = (a <= b) && ((a > c) || (b < c));
+console.log(resultadoExp3);
+// (a <= b): true
+// (a > c): false
+// (b < c): true
+// ((a > c) || (b < c)): true
+// resultadoExp3 = true
+
+const resultadoExp4 = !(a <= b) && ((a > c) || (b < c));
+console.log(resultadoExp4);
+// !(a <= b): false
+// (a > c): false
+// (b < c): true
+// ((a > c) || (b < c)): true
+// resultadoExp3 = false
+
+// typeof: devuelve el tipo de dato de una variable o una constante:
+typeof 42; // "number"
+typeof "Buenos días"; // "string"
+typeof true; // "boolean"
+
+// instanceof: determina si un objeto es una instancia de una clase
+let ahora = new Date();
+console.log(ahora instanceof Date); // true
+
+// spread = desparramar, dispersar
+// Copiar un arreglo o un objeto:
+
+let arregloOriginal = [1, 2, 3];
+let copiaArreglo = [...arregloOriginal];
+console.log(copiaArreglo);
+
+let objetoOriginal = { a: 1, b: 2 };
+let copiaObjeto = { ...objetoOriginal };
+console.log(copiaObjeto);
+
+
+// Unir arreglos
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+let unidos = [...array1, ...array2];
+console.log(unidos);
+
+// Pasar argumentos a una función:
+function suma(a, b, c) {
+  return a + b + c;
+}
+
+let numeros = [1, 2, 3];
+let resultado = suma(...numeros);
+console.log(resultado);
+
+// Convirtiendo un string en un arreglo de caracteres:
+let str = 'Hola!, ';
+let caracteres = [...str];
+console.log(caracteres);
