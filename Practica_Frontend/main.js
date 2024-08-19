@@ -706,3 +706,749 @@ console.log(resultado);
 let str = 'Hola!, ';
 let caracteres = [...str];
 console.log(caracteres);
+
+//unidad 5
+
+// if:
+let temperatura = 25;
+if (temperatura > 30) {
+  console.log("Hace calor hoy!");
+}
+
+// if-else:
+let horaActual = 18;
+if (horaActual < 12) {
+  console.log("Buenos días!");
+} else {
+  console.log("Buenas tardes!");
+}
+
+// if-else if-else:
+let nota = 75;
+if (nota >= 90) {
+  console.log("A");
+} else if (nota >= 80) {
+  console.log("B");
+} else if (nota >= 70) {
+  console.log("C");
+} else {
+  console.log("D");
+}
+
+// Anidados:
+let estaLloviendo = true;
+let haceFrio = false;
+
+if (estaLloviendo) {
+  if (haceFrio) {
+    console.log("Traer un paraguas y un abrigo.");
+  } else {
+    console.log("Traer un paraguas.");
+  }
+} else {
+  if (haceFrio) {
+    console.log("Traer un abrigo.");
+  } else {
+    console.log("Disfruta tu día!");
+  }
+}
+
+// Declaraciones switch:
+//Ejemplo 1:
+let diaSemana = 3;
+let nombreDia;
+
+switch (diaSemana) {
+  case 1:
+    nombreDia = "Domingo";
+    break;
+  case 2:
+    nombreDia = "Lunes";
+    break;
+  case 3:
+    nombreDia = "Martes";
+    break;
+  case 4:
+    nombreDia = "Miércoles";
+    break;
+  case 5:
+    nombreDia = "Jueves";
+    break;
+  case 6:
+    nombreDia = "Viernes";
+    break;
+  case 7:
+    nombreDia = "Sábado";
+    break;
+}
+
+console.log(`Hoy es ${nombreDia}.`);
+
+//Ejemplo 2:
+let fruta = "manzana";
+let color;
+
+switch (fruta) {
+  case "manzana":
+  case "cereza":
+    color = "rojo";
+    break;
+  case "banana":
+    color = "amarillo";
+    break;
+  case "uva":
+    color = "morado";
+    break;
+  default:
+    color = "desconocido";
+}
+
+console.log(`El color de la ${fruta} es ${color}.`);
+
+//Bucles
+
+// Ejemplo 1: Iteración simple
+for (let i = 0; i < 5; i++) {
+    console.log(`Iteración ${i}`);
+  }
+  
+  // Ejemplo 2: Recorriendo un arreglo:
+  let numeros = [10, 20, 30, 40, 50];
+  
+  for (let i = 0; i < numeros.length; i++) {
+    console.log(`El elemento en el índice ${i} es: ${numeros[i]}`);
+  }
+  
+  // Ejemplo 3: For anidados:
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 2; j++) {
+      console.log(`i: ${i}, j: ${j}`);
+    }
+  }
+  
+    // Bucles for in:
+
+  // Recorriendo propiedades de un objeto:
+let persona = {
+    nombre: "Elena",
+    apellido: "Salas",
+    edad: 30
+  };
+  
+  for (let llave in persona) {
+    console.log(`${llave}: ${persona[llave]}`);
+  }
+  
+  // Recorriendo arreglos:
+  let colores = ["rojo", "verde", "azul"];
+  
+  for (let indice in colores) {
+    console.log(`Indice ${indice}: ${colores[indice]}`);
+  }
+
+  // Bucle for of
+
+  // Iteración sobre arreglo:
+let colores = ["rojo", "verde", "azul"];
+
+for (let color of colores) {
+  console.log(color);
+}
+
+// Iteración sobre los caracteres de un string:
+let saludo = "Buenos días";
+
+for (let caracter of saludo) {
+  console.log(`El carácter actual es '${caracter}'`);
+}
+
+//Bucles while
+
+// Ejemplo 1: bucle simple
+let cuenta = 1;
+
+while (cuenta <= 5) {
+  console.log(`Cuenta: ${cuenta}`);
+  cuenta++;
+}
+
+// Ejemplo 2: Usando una condición:
+let numero = 10;
+
+while (numero > 0) {
+  console.log(`El número es: ${numero}`);
+  numero -= 2;
+}
+
+// Ejemplo 3: Generando número aleatorio:
+let numeroAleatorio;
+
+while (numeroAleatorio !== 5) {
+  numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+  console.log(`El número aleatorio es: ${numeroAleatorio}`);
+}
+
+//bucles do while
+
+// do..while
+let numeroAleatorio;
+
+do {
+  numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+  console.log(`El número aleatorio en do..while es: ${numeroAleatorio}`);
+} while (numeroAleatorio !== 5);
+
+// Ejemplo while vs do..while
+let cuenta = 0;
+
+while (cuenta < 15) {
+  console.log(`Cuenta actual en while: ${cuenta}`);
+  cuenta++;
+}
+
+console.log('****************');
+
+//cuenta = 0;
+
+do {
+  console.log(`Cuenta actual en do..while: ${cuenta}`);
+  cuenta++;
+} while (cuenta < 15);
+
+//Funciones:
+
+// Ejemplo de una función:
+
+function sumarNumeros(num1, num2) {
+  let sum = num1 + num2;
+  return sum;
+}
+
+console.log(sumarNumeros(5, 3)); // Salida: 8
+
+// Llamado de una función dentro de un bucle for:
+
+function raizCuadrada(numero) {
+  return numero * numero;
+}
+
+for (let i = 1; i <= 5; i++) {
+  let resultado = raizCuadrada(i);
+  console.log(`La raíz cuadrada de ${i} es ${resultado}`);
+}
+
+// Llamar una función dentro de otra función:
+
+function multiplicarNumeros(num1, num2) {
+  return num1 * num2;
+}
+
+function ejecutarOperaciones(num1, num2) {
+  let suma = sumarNumeros(num1, num2);
+  let producto = multiplicarNumeros(num1, num2);
+
+  console.log(`Suma: ${suma}`);
+  console.log(`Producto: ${producto}`);
+}
+
+ejecutarOperaciones(5, 3);
+
+// Parametros:
+
+// Enviar parámetros por valor:
+// Los datos primitivos siempre se pasan por valor.
+
+function incrementar(numero) {
+  numero++;
+  return numero;
+}
+
+let num = 5;
+let resultado = incrementar(num);
+
+console.log(num);    // Salida: 5
+console.log(resultado); // Salida: 6
+
+// Paso de parámetros por referencia:
+// Los datos no primitivos siempre se pasan por referencia.
+
+function agregarArreglo(arr, valor) {
+  arr.push(valor);
+  return arr;
+}
+
+let miArreglo = [1, 2, 3];
+let miArregloResultado = agregarArreglo(miArreglo, 4);
+
+console.log(miArreglo); // Salida: [1, 2, 3, 4]
+console.log(miArregloResultado); // Salida: [1, 2, 3, 4]
+
+// Declaraciones funciones:
+
+/*
+Las declaraciones de funciones utilizan
+la palabra clave function
+*/
+function saludo(nombre) {
+  console.log(`Hola, ${nombre}!`);
+}
+
+saludo("Eli");
+
+//expresiones de funciones
+
+// Funciones declaradas como una expresión:
+const saludo = function (nombre) {
+  console.log(`Hola, ${nombre}!`);
+}
+
+saludo("Eli");
+
+// Permite pasar la función como parámetro:
+
+function generarSaludo(saludoFuncion) {
+  const nombres = ['Eleanor', 'María', 'Gaby'];
+  for (const nombre of nombres) {
+    saludoFuncion(nombre);
+  }
+}
+
+generarSaludo(saludo);
+
+//funciones flechas
+
+// Función flecha con valor de retorno implícito:
+let sumar = (x, y) => x + y;
+
+let resultado = sumar(5, 3);
+console.log(resultado); // Salida: 8
+
+// Función flecha sin parámetros:
+let decirHola = () => {
+  console.log("Hola!");
+};
+
+decirHola(); // Salida: Hola!
+
+// Función flecha con un parámetro:
+let raizCuadrada = x => x * x;
+
+let resultado2 = raizCuadrada(9);
+console.log(resultado2); // Salida: 81
+
+// Función flecha con objeto literal:
+let crearPersona = (nombre, edad) => ({ nombre: nombre, edad: edad });
+
+let persona = crearPersona("Eleanor", 16);
+console.log(persona); // Salida: { nombre: 'Eleanor', edad: 16 }
+
+// this
+
+// "this" hace referencia al contexto donde se invoca:
+
+// Ejemplo 1: hace referencia al contexto global.
+// En el navegador hace referencia al objeto window.
+console.log(this);
+
+//Ejemplo 2: En un objeto, hace referencia al objeto:
+const miObjeto = {
+  mensaje: "Mensaje del Objeto",
+  funcionRegular: function () {
+    console.log(this.mensaje); // Salida: Mensaje del Objeto
+  },
+};
+
+miObjeto.funcionRegular(); // Salida: Mensaje del Objeto
+
+//Ejemplo 3: En una función, hace referencia al contexto global.
+function probarThis() {
+  console.log(this);
+  const probarThisFlecha = () => {
+    // también hace referencia al contexto global.
+    console.log(this);
+  }
+  probarThisFlecha();
+}
+
+probarThis();
+
+// Ejemplo 4: diferencia entre función regular y una función flecha:
+const unObjeto = {
+  mensaje: "Mensaje del Objeto",
+  funcionRegular: function () {
+    console.log(this.mensaje);
+  },
+  funcionFlecha: () => {
+    console.log(this.mensaje);
+  }
+};
+
+unObjeto.funcionRegular(); // Salida: Mensaje del Objeto
+unObjeto.funcionFlecha();   // Salida: undefined
+
+// Mayusculas y Minusculas
+
+// La clase String contiene varios métodos que utilizamos para
+// manipular strings
+
+const textoEnMinuscula = `Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit`;
+
+const textoEnMayuscula = textoEnMinuscula.toUpperCase();
+
+console.log(textoEnMayuscula);
+
+console.log(textoEnMayuscula.toLowerCase());
+
+// Concatenacion
+
+const string1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ";
+const string2 = "Maecenas pretium tempus nisi non lacinia";
+
+// Ejemplo 1:
+const resultado1 = string1 + string2;
+console.log(resultado1);
+
+// Ejemplo 2:
+const resultado2 = `${string1}${string2}`;
+console.log(resultado2);
+
+// Ejemplo 3:
+const resultado3 = string1.concat(string2);
+console.log(resultado3);
+
+// Ejemplo 4:
+const arr = [string1, string2];
+const resultado4 = arr.join();
+console.log(resultado4);
+
+
+// strings Arreglos
+
+const texto = `Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas pretium tempus nisi non lacinia`;
+
+const resultado1 = texto.split(' ');
+console.log(resultado1);
+
+const resultado2 = texto.split('o');
+console.log(resultado2);
+
+// Como reemplazar una palabra:
+const textoSplit = texto.split(' ');
+textoSplit[3] = 'PALABRA';
+console.log(textoSplit.join(' '));
+
+// Extraer texto
+
+const texto = `Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Maecenas pretium tempus nisi non lacinia`;
+
+// Toma el texto desde el índice 0 al índice 5:
+const lorem = texto.substring(0, 5);
+console.log(lorem);
+
+// Extrae los 10 primeros caracteres:
+const primerasLetras = texto.slice(undefined, 10);
+console.log(primerasLetras);
+
+// Toma todo el string, excepto los 10 primeros caracteres:
+const ignoraPrimerasLetras = texto.slice(10);
+console.log(ignoraPrimerasLetras);
+
+// Toma del carácter 5 al carácter 10:
+const ignoraPrimerasLetras2 = texto.slice(5, 10);
+console.log(ignoraPrimerasLetras2);
+
+// expresiones regulares
+
+// Verificando si un string contiene un patrón:
+const patronEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //primer grupo es el nombre del usuario, segundo grupo es el arroba, tercero el nombre del dominio , luego el punto, luego el com o el net
+
+const email1 = "usuario@example.com";
+const email2 = "email.invalido@com";
+const email3 = "otro.usuario@sub.domain.co.uk";
+
+console.log(patronEmail.test(email1)); // Salida: true
+console.log(patronEmail.test(email2)); // Salida: false
+console.log(patronEmail.test(email3)); // Salida: true
+
+// Reemplazando texto:
+const poema = `
+Quiero vivir la vida aventurera
+de los errantes pájaros marinos;
+no tener, para ir a otra ribera,
+la prosaica visión de los caminos.`;
+
+const palabraAReemplazar = "pájaros";
+const reemplazo = "aves";
+
+const regex = new RegExp(palabraAReemplazar, "gi"); // expresion "gi" significa que que la expresion regular tiene que buscar de manera global en el texto 
+const resultado = poema.replace(regex, reemplazo);
+
+console.log(resultado);
+
+/**
+Salida:
+Quiero vivir la vida aventurera
+de los errantes aves marinos;
+no tener, para ir a otra ribera,
+la prosaica visión de los caminos.
+ */
+
+// Métodos trim:
+const texto = "   Un texto con espacios en blanco   ";
+
+console.log(texto.trim() + '***');
+console.log(texto.trimStart() + '***');
+console.log(texto.trimEnd() + '***');
+
+// Métodos pad:
+const textoNumero = "5";
+console.log(textoNumero.padStart(4, "0"));
+console.log(textoNumero.padEnd(4, "0"));
+
+// charAt():
+const textoPrueba = "Quiero vivir la vida aventurera...";
+console.log(textoPrueba.charAt(5));
+
+// Convirtiendo strings a números:
+const strNumero = "123";
+const numero = parseInt(strNumero);
+const numero2 = +strNumero;
+
+console.log(typeof numero); // Salida: number
+console.log(typeof numero2); // Salida: number
+
+const strFloat = "3.14";
+const numeroDecimal = parseFloat(strFloat);
+
+console.log(numeroDecimal); // Salida: 3.14
+console.log(typeof numeroDecimal); // Salida: number
+
+// Convirtiendo números a strings:
+const valorNumeral = 789;
+const numeroString = valorNumeral.toString();
+const numeroString2 = `${valorNumeral}`;
+
+console.log(numeroString); // Salida: "789"
+console.log(numeroString2); // Salida: "789"
+
+//unidad 8:
+
+//recorriendo arreglos:
+
+const frutas = ['manzana', 'banana', 'pera'];
+
+frutas.forEach(fruta => { console.log(fruta); });
+
+console.log('\n');
+
+for (let i = 0; i < frutas.length; i++) {
+  console.log(frutas[i]);
+}
+
+console.log('\n');
+
+for (let i = frutas.length - 1; i >= 0; i--) {
+  console.log(frutas[i]);
+}
+
+console.log('\n');
+
+for (const fruta of frutas) {
+  console.log(fruta);
+}
+
+console.log('\n');
+
+for (const fruta in frutas) {
+  console.log(fruta);
+}
+
+// Método push:
+const frutas = ['manzana', 'banana', 'mango'];
+frutas.push('piña');
+console.log(frutas); // Salida: ['manzana', 'banana', 'mango', 'piña']
+
+// Método unshift:
+const colores = ['rojo', 'verde', 'amarillo'];
+colores.unshift('azul');
+
+console.log(colores); // Salida: ['azul', 'rojo', 'verde', 'amarillo']
+
+// Método splice:
+const numeros = [1, 2, 3, 4, 5];
+numeros.splice(2, 0, 6);
+
+console.log(numeros); // Salida: [1, 2, 6, 3, 4, 5]
+
+// Operador spread:
+const arregloOriginal = [1, 2, 3];
+const nuevoArreglo = [...arregloOriginal, 4, 5];
+
+console.log(nuevoArreglo); // Salida: [1, 2, 3, 4, 5]
+
+// Método concat:
+const autos = ['Nissan', 'Toyota'];
+const masAutos = autos.concat('Chevy', 'BMW');
+
+console.log(masAutos); // Salida: [ 'Nissan', 'Toyota', 'Chevy', 'BMW' ]
+
+// Usando la propiedad length:
+const letras = ['A', 'B', 'C'];
+letras[letras.length] = 'D';
+
+console.log(letras); // Salida: ['A', 'B', 'C', 'D']
+
+//Eliminar arreglos:
+
+// Método pop:
+const frutas = ['manzana', 'banana', 'mango'];
+const frutaEliminada = frutas.pop();
+
+console.log(frutaEliminada); // Salida: 'mango'
+console.log(frutas); // Salida: ['manzana', 'banana']
+
+// Método shift:
+const colores = ['rojo', 'verde', 'azul'];
+const colorEliminado = colores.shift();
+
+console.log(colorEliminado); // Salida: 'rojo'
+console.log(colores); // Salida: ['verde', 'azul']
+
+// Método splice:
+const numeros = [1, 2, 3, 4, 5];
+const numerosEliminado = numeros.splice(2, 2);
+
+console.log(numerosEliminado); // Salida: [3, 4]
+console.log(numeros); // Salida: [1, 2, 5]
+
+// Método slice:
+const autos = ['Nissan', 'Toyota', 'Chevy', 'BMW'];
+const autosEliminados = autos.slice(1, 3);
+
+console.log(autosEliminados); // Salida: [ 'Toyota', 'Chevy' ]
+console.log(autos); // Salida: ['Nissan', 'Toyota', 'Chevy', 'BMW']
+
+// reemplazando un arreglo
+
+// Utilizando el índice:
+const autos = ['Nissan', 'Toyota', 'Chevy', 'BMW'];
+autos[1] = 'Ford';
+
+console.log(autos); // Salida: ['Nissan', 'Ford', 'Chevy', 'BMW']
+
+// Método splice:
+const numeros = [1, 2, 3, 4, 5];
+numeros.splice(2, 1, 6);
+
+console.log(numeros); // Salida: [1, 2, 6, 4, 5]
+
+// Método fill:
+const letras = ['A', 'B', 'C', 'D', 'E', 'H', 'I'];
+letras.fill('X', 2, 4);
+
+console.log(letras); // Salida: ['A', 'B', 'X', 'X', 'E', 'H', 'I'] 
+
+// Mutar datos
+
+// Método reverse: invierte el orden de los elementos:
+const flores = ['amapola', 'geranio', 'girasol'];
+flores.reverse();
+
+console.log(flores); // Salida: ['girasol', 'geranio', 'amapola']
+
+// Método sort: ordena los elementos en el arreglo
+/**
+ * La función callback debe retornar un valor dependiendo del caso:
+ * - Un valor negativo si el primer parámetro es menor que el segundo
+ * - Cero si son iguales
+ * - Un valor positivo si el primer parámetro es mayor que el segundo
+ * Si la función se omite, los elementos se ordenan ascendentemente
+ * según el orden de caracteres ASCII.
+ */
+const numeros = [3, 1, 4, 1, 5, 9, 2, 6];
+numeros.sort((a, b) => a - b); // Ordena los elementos en orden ascendente
+console.log(numeros); // Salida: [1, 1, 2, 3, 4, 5, 6, 9]
+
+const categorias = ['categoria3', 'categoria1', 'categoria2', 'categoria3', 'categoria2', 'categoria2', 'categoria1'];
+categorias.sort((catA, catB) => {
+  if (catA === 'categoria3') {
+    return 1;
+  } else if (catA === 'categoria1') {
+    return -1;
+  } else if (catA === 'categoria2' && catB === 'categoria3') {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+
+console.log(categorias); // Salida: ['categoria1', 'categoria1', 'categoria2', 'categoria2', 'categoria2', 'categoria3', 'categoria3']
+
+// Método map:
+const numerosAlCuadrado = numeros.map(num => num ** 2);
+console.log(numerosAlCuadrado); // Salida: [1,  1,  4,  9, 16, 25, 36, 81]
+
+const personas = [{ nombre: 'eli' }, { nombre: 'pedro' }, { nombre: 'ana' }];
+const nombres = personas.map(persona => persona.nombre.toUpperCase());
+console.log(nombres); // Salida: [ 'ELI', 'PEDRO', 'ANA' ]
+
+// buscar datos arreglos:
+
+const personas = [
+  { nombre: 'Eli' },
+  { nombre: 'Pedro' },
+  { nombre: 'Ana' },
+  { nombre: 'Eli' },
+  { nombre: 'María' }
+];
+
+let frutas = ['manzana', 'banana', 'pera', 'melón', 'banana'];
+
+// Métodos indexOf y lastIndexOf: retorna el primer o el último índice 
+// que coincida con la búsqueda
+// retorna -1 si no se encuentra el elemento
+let indiceBanana = frutas.indexOf('banana');
+let ultimoindiceBanana = frutas.lastIndexOf('banana');
+
+console.log(indiceBanana); // Salida: 1
+console.log(ultimoindiceBanana); // Salida: 4
+
+console.log(personas.indexOf({ nombre: 'Eli' })); // Salida: -1
+console.log(personas.lastIndexOf({ nombre: 'Eli' })); // Salida: -1
+
+console.log(personas.indexOf(personas[3])); // Salida: 3
+console.log(personas.lastIndexOf(personas[1])); // Salida: 1
+
+// Método includes: determina si el arreglo contiene el elemento buscado
+// Devuelve un valor booleano
+console.log(frutas.includes('melón')); // Salida: true
+console.log(frutas.includes('sandía')); // Salida: false
+
+console.log(personas.includes({ nombre: 'Eli' })); // Salida: false
+console.log(personas.includes(personas[3])); // Salida: true
+
+// Método find: retorna primer elemento que coincida con la búsqueda
+console.log(frutas.find(fruta => fruta === 'melón')); // Salida: 'melón'
+console.log(frutas.find(fruta => fruta === 'sandía')); // Salida: undefined
+
+console.log(personas.find(persona => persona.nombre === 'Eli')); 
+// Salida: { nombre: 'Eli' }
+
+// Método findIndex: retorna el elemento que coincida con la búsqueda
+console.log(frutas.findIndex(fruta => fruta === 'melón')); // Salida: 3
+console.log(frutas.findIndex(fruta => fruta === 'sandía')); // Salida: -1
+
+console.log(personas.findIndex(persona => persona.nombre === 'Eli')); 
+// Salida: 0
+
+// Utilizando un loop:
+let encontrada = false;
+for (let i = 0; i < frutas.length; i++) {
+  if (frutas[i] === 'melón') {
+    encontrada = true;
+    break;
+  }
+}
