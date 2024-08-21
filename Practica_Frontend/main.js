@@ -1452,3 +1452,228 @@ for (let i = 0; i < frutas.length; i++) {
     break;
   }
 }
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Método some():
+const tieneNumerosPares = numeros.some(num => num % 2 === 0);
+console.log(tieneNumerosPares); // Salida true
+
+// Método every():
+const todosSonPares = numeros.every(num => num % 2 === 0);
+console.log(todosSonPares); // Salida false
+
+// Método reduce():
+const suma = numeros.reduce((acumulador, valorActual) => {
+  return acumulador + valorActual;
+}, 0);
+
+console.log(suma); // Salida: 55
+
+const strings = ['Hola', ', ', 'JavaScript', '!'];
+
+const stringConcatenado = strings.reduce((acumulador, valorActual) => {
+  return acumulador + valorActual;
+}, '');
+
+console.log(stringConcatenado); // Salida: "Hola, JavaScript!"
+
+// Clases:
+
+class Persona {
+  constructor(nombreParametro, apellidoParametro) {
+    this.nombre = nombreParametro;
+    this.apellido = apellidoParametro;
+  }
+
+  obtenerNombreCompleto() {
+    return `${this.nombre} ${this.apellido}`;
+  }
+}
+
+let samuel = new Persona('Samuel', 'Reyes');
+console.log(samuel.nombre); // Salida: 'Samuel'
+console.log(samuel.obtenerNombreCompleto()); // Salida: 'Samuel Reyes'
+
+let david = new Persona('David', 'Quesada');
+console.log(david.nombre); // Salida: 'David'
+console.log(david.obtenerNombreCompleto()); // Salida: 'David Quesada'
+
+//construccion de clases:
+
+class Persona {
+  constructor(nombreParametro, apellidoParametro) {
+    this.nombre = nombreParametro;
+    this.apellido = apellidoParametro;
+    this.largoNombreCompleto = this.obtenerNombreCompleto().length;
+  }
+
+  obtenerNombreCompleto() {
+    return `${this.nombre} ${this.apellido}`;
+  }
+}
+
+let david = new Persona('David', 'Quesada');
+console.log(david.largoNombreCompleto); // Salida: 13
+console.log(david.obtenerNombreCompleto()); // Salida: 'David Quesada'
+
+// Clase sin constructor:
+class Auto {
+  marca = undefined;
+};
+const auto = new Auto();
+console.log(auto); // Salida: Auto { marca: undefined }
+auto.marca = 'Ford';
+
+//propiedades de clase:
+
+class Persona {
+  static especie = 'Homo sapiens';
+  constructor(nombreParametro, apellidoParametro) {
+    this.nombre = nombreParametro;
+    this.apellido = apellidoParametro;
+    this.largoNombreCompleto = this.obtenerNombreCompleto().length;
+  }
+
+  obtenerNombreCompleto() {
+    return `${this.nombre} ${this.apellido}`;
+  }
+}
+
+let david = new Persona('David', 'Quesada');
+console.log(david.nombre); // Salida: 'David'
+console.log(david.apellido); // Salida: 'Quesada'
+console.log(david.largoNombreCompleto); // Salida: 13
+console.log(Persona.especie); // Salida: 'Homo sapiens'
+
+// Metodos de clase:
+
+class Persona {
+  static especie = 'Homo sapiens';
+  constructor(nombreParametro, apellidoParametro) {
+    this.nombre = nombreParametro;
+    this.apellido = apellidoParametro;
+    this.largoNombreCompleto = this.obtenerNombreCompleto().length;
+  }
+
+  obtenerNombreCompleto() {
+    return `${this.nombre} ${this.apellido}`;
+  }
+  obtenerSaludo(hora) {
+    if (hora === 'mañana') {
+      return `Buenos días, mi nombre es ${this.obtenerNombreCompleto()}`;
+    } else {
+      return `Buenas tardes, mi nombre es ${this.obtenerNombreCompleto()}`;
+    }
+  }
+
+  static metodoEstatico() {
+    console.log(Persona.especie); // Salida: 'Homo sapiens'
+    console.log(this.especie); // Salida: 'Homo sapiens'
+    console.log(this.nombre); // Salida: undefined
+  }
+}
+
+let david = new Persona('David', 'Quesada');
+console.log(david.obtenerNombreCompleto()); // Salida: 'David Quesada'
+console.log(david.obtenerSaludo('tarde'));
+// Salida: 'Buenas tardes, mi nombre es David Quesada'
+
+Persona.metodoEstatico();
+
+// Herencia en Js:
+
+class Animal {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+
+  hablar() {
+    console.log(`${this.nombre} hace ruido.`);
+  }
+}
+
+class Perro extends Animal {
+  constructor(nombre, raza) {
+    super(nombre);
+    this.raza = raza;
+  }
+
+  ladra() {
+    console.log(`${this.nombre} ladras muy fuerte!`);
+  }
+}
+
+let miPerro = new Perro('Fido', 'Labrador');
+miPerro.hablar(); // Salida: 'Fido hace ruido.'
+miPerro.ladra(); // Salida: 'Fido ladras muy fuerte!'
+
+// SET INTERVAL Y SET TIME OUT:
+
+function mostrarTiempo() {
+  let ahora = new Date();
+  let horas = ahora.getHours();
+  let minutos = ahora.getMinutes();
+  let segundos = ahora.getSeconds();
+  
+  console.log(`${horas}:${minutos}:${segundos}`);
+}
+
+// setInterval: ejecuta una función cada vez que el tiempo definido 
+// en el segundo parámetro haya pasado.
+const idSetInterval = setInterval(mostrarTiempo, 1000); 
+// Se actualiza cada segundo
+
+// setTimeout: ejecuta una función luego que el tiempo definido
+// en el segundo parámetro haya pasado.
+const idSetTimeout = setTimeout(() => {
+  // clearInterval: elimina el interval con el id que se pase como parámetro.
+ clearInterval(idSetInterval);
+}, 5000);
+
+setTimeout(() => {
+  // clearTimeout: elimina el timeout con el id que se pase como parámetro.
+  clearTimeout(idSetTimeout);
+ }, 2000);
+
+ // METODO CALLBAK
+
+ /**
+ * Una función callback es una función que se pasa como argumento 
+ * a otra función y se ejecuta después de completar esa función.
+ */
+function hacerAlgoAsincrono(callback) {
+  setTimeout(function() {
+    const resultado = Math.random();
+    callback(resultado);
+  }, 1000);
+}
+
+const procesarResultado = (datos) => {
+  console.log(`El resultado obtenido: ${datos}`);
+}
+
+hacerAlgoAsincrono(procesarResultado);
+
+//PROMESAS: Una promesa en JavaScript es un objeto que representa la eventual terminación (o fracaso) de una operación asincrónica y su valor resultante
+
+function hacerAlgoAsincrono() {
+  return new Promise((resolver, rechazar) => {
+    setTimeout(() => {
+      const hecho = Math.random() < 0.5;
+      if (hecho) {
+        resolver('La operación fue un éxito!');
+      } else {
+        rechazar('La operación falló!');
+      }
+    }, 1000);
+  });
+}
+
+hacerAlgoAsincrono()
+  .then((mensaje) => {
+    console.log(mensaje);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
